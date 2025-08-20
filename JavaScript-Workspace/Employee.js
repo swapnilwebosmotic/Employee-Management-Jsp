@@ -40,9 +40,8 @@ function saveToLocalStorage() {
 // Add or Update Employee
 form.addEventListener("submit", (e) => {
     e.preventDefault();
-
     const name = document.getElementById("name").value.trim();
-    const gender = document.querySelector("input[name='gender']:checked").value.checked=true;
+    const gender = document.querySelector("input[name='gender']:checked").value;
     const dob = document.getElementById("dob").value;
     const email = document.getElementById("email").value.trim();
     const phone = document.getElementById("phone").value.trim();
@@ -50,7 +49,14 @@ form.addEventListener("submit", (e) => {
         .map(cb => cb.value)
         .join(", ");
 
-        if (new Date(dob) > new Date()) {
+    // Email Validation
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailPattern.test(email)) {
+        alert("Please enter a valid email address.");
+        return;
+    }
+    // DOB validation
+    if (new Date(dob) > new Date()) {
         alert("Date of Birth cannot be in the future.");
         return;
     }
