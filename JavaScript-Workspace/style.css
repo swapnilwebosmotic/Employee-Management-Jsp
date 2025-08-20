@@ -1,0 +1,181 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background: #f4f6f8;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.form-container,
+.table-container {
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    margin: 20px auto;
+    padding: 20px;
+    max-width: 800px;
+    background: #fff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.form-header,
+.table-header {
+    background: #2a7ecb;
+    color: white;
+    padding: 10px;
+    font-weight: bold;
+    border-radius: 4px 4px 0 0;
+    font-size: 1.1rem;
+}
+
+form {
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    gap: 18px 15px;
+    margin-top: 15px;
+}
+
+form label {
+    font-weight: 500;
+    align-self: center;
+}
+
+form label span {
+    color: red;
+}
+
+/* Inputs */
+form input[type="text"],
+form input[type="email"],
+form input[type="tel"],
+form input[type="date"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #bbb;
+    border-radius: 4px;
+    font-size: 0.95rem;
+    box-sizing: border-box;
+}
+
+/* Gender group */
+.gender-group {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+/* Hobbies group */
+.hobbies-group {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px; /* reduced for better responsiveness */
+    flex-wrap: wrap;
+}
+
+.hobbies {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.hobbies label {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+/* Buttons */
+button {
+    grid-column: span 2;
+    width: auto;
+    padding: 8px 14px;
+    background: #2a7ecb;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    transition: background 0.3s ease;
+    justify-self: start;
+    margin-bottom: 7px;
+}
+
+button:hover {
+    background: #1d5e9f;
+}
+
+/* Tables */
+.table-container {
+    overflow-x: auto; /* scroll if too wide */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 12px;
+    font-size: 0.95rem;
+}
+
+th,
+td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+    word-wrap: break-word;
+    max-width: 200px;
+}
+
+th {
+    background: #f1f5f9;
+    font-weight: 600;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+/* Medium screens (tablets) */
+@media (max-width: 768px) {
+    form {
+        grid-template-columns: 1fr; /* single column form */
+    }
+
+    .hobbies-group {
+        flex-direction: column; /* stack hobbies under label */
+        gap: 10px;
+    }
+
+    button {
+        grid-column: span 1;
+        justify-self: center; /* center the button */
+    }
+}
+
+/* Small screens (mobiles) */
+@media (max-width: 480px) {
+    .form-container,
+    .table-container {
+        padding: 12px;
+        margin: 8px;
+    }
+
+    h2 {
+        font-size: 1rem;
+    }
+
+    th,
+    td {
+        font-size: 0.8rem;
+        padding: 6px;
+    }
+
+    button {
+        font-size: 0.8rem;
+        padding: 7px 12px;
+        width: 100%; /* full-width button */
+    }
+}
