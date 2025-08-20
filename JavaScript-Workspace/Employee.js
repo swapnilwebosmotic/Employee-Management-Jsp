@@ -29,8 +29,6 @@ function renderTable() {
         `;
         basicBody.innerHTML += row;
     });
-
-    // refresh advanced table whenever basic is updated
     fillAdvancedTable();
 }
 
@@ -44,7 +42,7 @@ form.addEventListener("submit", (e) => {
     e.preventDefault();
 
     const name = document.getElementById("name").value.trim();
-    const gender = document.querySelector("input[name='gender']:checked").value;
+    const gender = document.querySelector("input[name='gender']:checked").value.checked=true;
     const dob = document.getElementById("dob").value;
     const email = document.getElementById("email").value.trim();
     const phone = document.getElementById("phone").value.trim();
