@@ -1,181 +1,324 @@
+/*Reset & Base*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-    font-family: Arial, sans-serif;
-    margin: 20px;
-    background: #f4f6f8;
+  font-family: Arial, sans-serif;
+  background: #f4f6f8;
+  color: #333;
+  padding: 20px;
 }
 
-h2 {
-    text-align: center;
-    margin-bottom: 15px;
-    color: #333;
+h2,
+h3 {
+  text-align: center;
+  margin-bottom: 15px;
 }
 
-.form-container,
-.table-container {
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    margin: 20px auto;
-    padding: 20px;
-    max-width: 800px;
-    background: #fff;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+.container {
+  max-width: 900px;
+  margin: 0 auto;
 }
 
-.form-header,
-.table-header {
-    background: #2a7ecb;
-    color: white;
-    padding: 10px;
-    font-weight: bold;
-    border-radius: 4px 4px 0 0;
-    font-size: 1.1rem;
+/*Panel*/
+.panel {
+  border: 1px solid #337ab7;
+  border-radius: 6px;
+  margin-bottom: 30px;
+  overflow-x: auto;
+  /* makes table scroll on mobile */
 }
 
-form {
-    display: grid;
-    grid-template-columns: 150px 1fr;
-    gap: 18px 15px;
-    margin-top: 15px;
+.panel-heading {
+  display: block;
+  background: #337ab7;
+  color: #fff;
+  font-weight: bold;
+  padding: 10px 15px;
 }
 
-form label {
-    font-weight: 500;
-    align-self: center;
+.panel-body {
+  padding: 15px;
 }
 
-form label span {
-    color: red;
+/*Form*/
+.form-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
 }
 
-/* Inputs */
-form input[type="text"],
-form input[type="email"],
-form input[type="tel"],
-form input[type="date"] {
-    width: 100%;
-    padding: 8px;
-    border: 1px solid #bbb;
-    border-radius: 4px;
-    font-size: 0.95rem;
-    box-sizing: border-box;
+.form-row label {
+  min-width: 150px;
+  font-weight: bold;
+  text-align: right;
+  margin-right: 10px;
 }
 
-/* Gender group */
-.gender-group {
-    display: flex;
-    gap: 15px;
-    align-items: center;
-    flex-wrap: wrap;
+.input-wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
-/* Hobbies group */
-.hobbies-group {
-    display: flex;
-    align-items: flex-start;
-    gap: 20px; /* reduced for better responsiveness */
-    flex-wrap: wrap;
+.form-row input[type="text"],
+.form-row input[type="email"],
+.form-row input[type="date"] {
+  flex: 1;
+  padding: 6px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
 }
 
-.hobbies {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
+/* Hobbies Section */
+.form-row.hobbies {
+  align-items: flex-start;
 }
 
-.hobbies label {
-    display: flex;
-    align-items: center;
-    gap: 5px;
+.form-row.hobbies label:first-child {
+  width: 150px;
+  margin-right: 10px;
 }
 
-/* Buttons */
+.form-row.hobbies .inline-options {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.form-row.hobbies .inline-options label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 0;
+}
+
+/* Inline Options */
+.inline-options {
+  flex-wrap: wrap;
+  gap: 6px;
+  align-items: center;
+}
+
+.inline-options label {
+  font-weight: normal;
+}
+
+/* Actions */
+.form-actions {
+  margin-left: 150px;
+  margin-top: 10px;
+}
+
+.btn-submit {
+  padding: 8px 16px;
+}
+
+/*Buttons*/
 button {
-    grid-column: span 2;
-    width: auto;
-    padding: 8px 14px;
-    background: #2a7ecb;
-    color: white;
-    border: none;
-    cursor: pointer;
-    border-radius: 4px;
-    font-size: 0.9rem;
-    transition: background 0.3s ease;
-    justify-self: start;
-    margin-bottom: 7px;
+  background: #337ab7;
+  color: #fff;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  margin-bottom: 7px;
 }
 
 button:hover {
-    background: #1d5e9f;
+  background: #286090;
 }
 
-/* Tables */
-.table-container {
-    overflow-x: auto; /* scroll if too wide */
-}
-
+/*Tables*/
 table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 12px;
-    font-size: 0.95rem;
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
 }
 
 th,
 td {
-    border: 1px solid #ddd;
-    padding: 10px;
-    text-align: left;
-    word-wrap: break-word;
-    max-width: 200px;
+  border: 1px solid #ddd;
+  padding: 8px 12px;
+  text-align: left;
 }
 
 th {
-    background: #f1f5f9;
-    font-weight: 600;
+  background: #f2f2f2;
+  font-weight: bold;
 }
 
-tr:nth-child(even) {
-    background: #f9f9f9;
+/* Vertical Table (Advanced View) */
+.vertical-table {
+  width: 100%;
+  border: 1px solid #ccc;
+  border-collapse: collapse;
+  margin: 8px 0;
+  background: #f9f9f9;
 }
 
-/* Medium screens (tablets) */
+.vertical-table th {
+  width: 150px;
+  background: #f2f2f2;
+  text-align: left;
+  padding: 6px 10px;
+  border: 1px solid #ddd;
+}
+
+.vertical-table td {
+  padding: 6px 10px;
+  border: 1px solid #ddd;
+}
+
+.vertical-table .actions {
+  text-align: left;
+  padding: 8px;
+}
+
+/*Error Messages*/
+.error {
+  color: red;
+  font-size: 13px;
+  margin-top: 4px;
+  display: block;
+}
+
+/* Responsive */
 @media (max-width: 768px) {
-    form {
-        grid-template-columns: 1fr; /* single column form */
-    }
 
-    .hobbies-group {
-        flex-direction: column; /* stack hobbies under label */
-        gap: 10px;
-    }
+  /* Form */
+  .form-row {
+    flex-direction: row;
+    /* keep label & input on same line */
+    align-items: center;
+  }
 
-    button {
-        grid-column: span 1;
-        justify-self: center; /* center the button */
-    }
-}
+  .form-row label {
+    min-width: 150px;
+    /* same fixed width as desktop */
+    margin-right: 10px;
+    text-align: right;
+  }
 
-/* Small screens (mobiles) */
-@media (max-width: 480px) {
-    .form-container,
-    .table-container {
-        padding: 12px;
-        margin: 8px;
-    }
+  .input-wrapper {
+    flex: 1;
+    /* input takes remaining space */
+    display: flex;
+    flex-direction: column;
+    /* keep validation/errors below input */
+  }
 
-    h2 {
-        font-size: 1rem;
-    }
+  .form-row input[type="text"],
+  .form-row input[type="email"],
+  .form-row input[type="date"] {
+    width: 100%;
+    /* full width like desktop */
+  }
 
-    th,
-    td {
-        font-size: 0.8rem;
-        padding: 6px;
-    }
+  
+  /* Hobbies section: keep label on left, checkboxes neat */
+  .form-row.hobbies {
+    flex-direction: row;       /* label on left, checkboxes right */
+    align-items: flex-start;
+  }
 
-    button {
-        font-size: 0.8rem;
-        padding: 7px 12px;
-        width: 100%; /* full-width button */
-    }
+  .form-row.hobbies label:first-child {
+    min-width: 150px;          /* align with other labels */
+    margin-right: 10px;
+    text-align: right;
+  }
+
+  .form-row.hobbies .inline-options {
+    display: flex;
+    flex-wrap: wrap;           /* multiple checkboxes in line */
+    gap: 6px;
+    align-items: center;
+    width: 100%;
+  }
+
+  .form-row.hobbies .inline-options label {
+    margin: 0;
+    gap: 5px;
+  }
+
+  /* Submit button aligned like desktop */
+  .form-actions {
+    margin-left: 150px;
+  }
+
+  .btn-submit {
+    width: auto;               /* natural size */
+  }
+
+  .form-row.reverse .inline-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: center;
+    width: 100%;
+  }
+
+  .form-row.reverse .inline-options label {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin: 0;
+    white-space: nowrap;
+  }
+
+  .form-row.reverse .inline-options input[type="radio"] {
+    transform: scale(1.1);
+    margin: 0;
+  }
+
+
+
+  /* Ensure panel heading remains consistent */
+  .panel-heading {
+    display: block;
+    text-align: center;
+    /* center like table heading */
+    font-size: 16px;
+    /* same readable size */
+  }
+
+  /* Basic Table - make scrollable */
+  table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  /* Advanced table - card style */
+  .vertical-table {
+    display: block;
+    border: none;
+  }
+
+  .vertical-table tr {
+    display: block;
+    margin-bottom: 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    background: #fff;
+    padding: 8px;
+  }
+
+  .vertical-table th {
+    display: block;
+    background:  #f2f2f2;
+    font-weight: bold;
+    padding: 4px 0;
+    border: none;
+  }
+
+  .vertical-table td {
+    display: block;
+    padding: 4px 0 8px;
+    border: none;
+  }
 }
