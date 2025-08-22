@@ -4,20 +4,17 @@
   padding: 0;
   box-sizing: border-box;
 }
-
 body {
   font-family: Arial, sans-serif;
   background: #f4f6f8;
   color: #333;
   padding: 20px;
 }
-
 h2,
 h3 {
   text-align: center;
   margin-bottom: 15px;
 }
-
 .container {
   max-width: 900px;
   margin: 0 auto;
@@ -29,9 +26,7 @@ h3 {
   border-radius: 6px;
   margin-bottom: 30px;
   overflow-x: auto;
-  /* makes table scroll on mobile */
 }
-
 .panel-heading {
   display: block;
   background: #337ab7;
@@ -39,7 +34,6 @@ h3 {
   font-weight: bold;
   padding: 10px 15px;
 }
-
 .panel-body {
   padding: 15px;
 }
@@ -50,20 +44,17 @@ h3 {
   align-items: center;
   margin-bottom: 12px;
 }
-
 .form-row label {
   min-width: 150px;
   font-weight: bold;
   text-align: right;
   margin-right: 10px;
 }
-
 .input-wrapper {
   flex: 1;
   display: flex;
   flex-direction: column;
 }
-
 .form-row input[type="text"],
 .form-row input[type="email"],
 .form-row input[type="date"] {
@@ -77,18 +68,15 @@ h3 {
 .form-row.hobbies {
   align-items: flex-start;
 }
-
 .form-row.hobbies label:first-child {
   width: 150px;
   margin-right: 10px;
 }
-
 .form-row.hobbies .inline-options {
   display: flex;
   flex-direction: column;
   gap: 4px;
 }
-
 .form-row.hobbies .inline-options label {
   display: flex;
   align-items: center;
@@ -102,7 +90,6 @@ h3 {
   gap: 6px;
   align-items: center;
 }
-
 .inline-options label {
   font-weight: normal;
 }
@@ -112,7 +99,6 @@ h3 {
   margin-left: 150px;
   margin-top: 10px;
 }
-
 .btn-submit {
   padding: 8px 16px;
 }
@@ -128,7 +114,6 @@ button {
   font-size: 14px;
   margin-bottom: 7px;
 }
-
 button:hover {
   background: #286090;
 }
@@ -139,14 +124,12 @@ table {
   border-collapse: collapse;
   margin-top: 15px;
 }
-
 th,
 td {
   border: 1px solid #ddd;
   padding: 8px 12px;
   text-align: left;
 }
-
 th {
   background: #f2f2f2;
   font-weight: bold;
@@ -160,7 +143,6 @@ th {
   margin: 8px 0;
   background: #f9f9f9;
 }
-
 .vertical-table th {
   width: 150px;
   background: #f2f2f2;
@@ -168,12 +150,10 @@ th {
   padding: 6px 10px;
   border: 1px solid #ddd;
 }
-
 .vertical-table td {
   padding: 6px 10px;
   border: 1px solid #ddd;
 }
-
 .vertical-table .actions {
   text-align: left;
   padding: 8px;
@@ -193,65 +173,49 @@ th {
   /* Form */
   .form-row {
     flex-direction: row;
-    /* keep label & input on same line */
     align-items: center;
   }
-
   .form-row label {
     min-width: 150px;
-    /* same fixed width as desktop */
     margin-right: 10px;
     text-align: right;
   }
-
   .input-wrapper {
     flex: 1;
-    /* input takes remaining space */
     display: flex;
     flex-direction: column;
-    /* keep validation/errors below input */
   }
 
   .form-row input[type="text"],
   .form-row input[type="email"],
   .form-row input[type="date"] {
     width: 100%;
-    /* full width like desktop */
   }
-
-  
-  /* Hobbies section: keep label on left, checkboxes neat */
   .form-row.hobbies {
-    flex-direction: row;       /* label on left, checkboxes right */
+    flex-direction: row;       
     align-items: flex-start;
   }
-
   .form-row.hobbies label:first-child {
-    min-width: 150px;          /* align with other labels */
+    min-width: 150px;         
     margin-right: 10px;
     text-align: right;
   }
-
   .form-row.hobbies .inline-options {
     display: flex;
-    flex-wrap: wrap;           /* multiple checkboxes in line */
+    flex-wrap: wrap;          
     gap: 6px;
     align-items: center;
     width: 100%;
   }
-
   .form-row.hobbies .inline-options label {
     margin: 0;
     gap: 5px;
   }
-
-  /* Submit button aligned like desktop */
   .form-actions {
     margin-left: 150px;
   }
-
   .btn-submit {
-    width: auto;               /* natural size */
+    width: auto;               
   }
 
   .form-row.reverse .inline-options {
@@ -261,7 +225,6 @@ th {
     align-items: center;
     width: 100%;
   }
-
   .form-row.reverse .inline-options label {
     display: flex;
     align-items: center;
@@ -269,36 +232,26 @@ th {
     margin: 0;
     white-space: nowrap;
   }
-
   .form-row.reverse .inline-options input[type="radio"] {
     transform: scale(1.1);
     margin: 0;
   }
-
-
-
-  /* Ensure panel heading remains consistent */
   .panel-heading {
     display: block;
     text-align: center;
-    /* center like table heading */
     font-size: 16px;
-    /* same readable size */
   }
-
-  /* Basic Table - make scrollable */
   table {
     display: block;
     overflow-x: auto;
     white-space: nowrap;
   }
 
-  /* Advanced table - card style */
+  /* Advanced table */
   .vertical-table {
     display: block;
     border: none;
   }
-
   .vertical-table tr {
     display: block;
     margin-bottom: 12px;
@@ -307,7 +260,6 @@ th {
     background: #fff;
     padding: 8px;
   }
-
   .vertical-table th {
     display: block;
     background:  #f2f2f2;
@@ -315,7 +267,6 @@ th {
     padding: 4px 0;
     border: none;
   }
-
   .vertical-table td {
     display: block;
     padding: 4px 0 8px;
