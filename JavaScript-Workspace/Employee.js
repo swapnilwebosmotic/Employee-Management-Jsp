@@ -169,7 +169,7 @@ const reindexAdvancedRows = () => {
     });
 };
 
-// CRUD
+// Edit & Delete
 window.editEmployee = (index) => {
   console.log("Editing employee at index:", index);
   const emp = employees[index];
